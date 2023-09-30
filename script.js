@@ -12,15 +12,14 @@ const options = {
 async function scoresData() {
 	const response = await fetch(url, options);
 	const result = await response.json();
-    console.log(result);
-
-    var scoresDetails = `<ul>`;
-    result.data?.DATA?.forEach(e => {
-        scoresData += `<li>${e.explore_page}</li>`;
-    });
-
+    const soccerData = result.DATA?.explore_page?.soccer;
+    let scoresDetails = `<ul>`;
+    if (soccerData) {
+        for (const e of soccerData) {
+            scoresDetails += `<li>${e.title}</li>`;
+        }
+    }
     scoresDetails += `</ul>`;
-
     document.getElementById("scores").innerHTML = scoresDetails;
 }
 // } catch (error) {
