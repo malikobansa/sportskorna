@@ -1,0 +1,9 @@
+#scores {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  #scores p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
